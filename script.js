@@ -63,7 +63,8 @@ async function predict() {
   document.getElementById("resultBox").classList.add("hidden");
 
   try {
-    const response = await fetch("http://127.0.0.1:8000/predict", {
+    const response = await fetch("https://parkinsons-ai-backend.onrender.com/predict", {
+, {
       method: "POST",
       body: formData
     });
@@ -152,3 +153,4 @@ function downloadPDF() {
 
   doc.save("Parkinson_Screening_Report.pdf");
 }
+
