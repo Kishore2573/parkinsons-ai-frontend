@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AI Parkinson’s Screening System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>AI Parkinson’s Screening Tool</h1>
+<p class="subtitle">Early risk assessment using handwriting & voice</p>
+
+<div class="card">
+
+  <!-- Handwriting -->
+  <label>Handwriting Image (Spiral / Writing)</label>
+  <input type="file" id="handwriting" accept="image/*">
+
+  <hr>
+
+  <!-- Voice -->
+  <label>Voice Sample</label>
+
+  <!-- Mic recording -->
+  <button onclick="startRecording()">Start Recording</button>
+  <button onclick="stopRecording()">Stop Recording</button>
+  <p id="recordStatus">Not recorded</p>
+
+  <hr>
+
+  <!-- File upload -->
+  <label>Or Upload Voice File (.wav)</label>
+  <input type="file" id="voiceFile" accept=".wav">
+
+  <hr>
+
+  <!-- Analyze -->
+  <button onclick="predict()">Analyze</button>
+
+  <!-- Loader -->
+  <div id="loader" class="hidden">Analyzing patient data...</div>
+
+  <!-- Results -->
+  <div id="resultBox" class="hidden">
+    <h3 id="prediction"></h3>
+    <p id="score"></p>
+
+    <!-- Handwriting explanation heatmap -->
+    <img id="heatmap" width="128" style="display:none; margin-top:10px;">
+
+    <!-- PDF download -->
+    <button onclick="downloadPDF()">Download PDF Report</button>
+  </div>
+
+</div>
+
+<footer>
+  <p>⚠ This tool is for screening only. Not a medical diagnosis.</p>
+</footer>
+
+<!-- PDF library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<!-- App logic -->
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
