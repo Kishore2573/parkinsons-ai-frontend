@@ -64,7 +64,6 @@ async function predict() {
 
   try {
     const response = await fetch("https://parkinsons-ai-backend.onrender.com/predict", {
-, {
       method: "POST",
       body: formData
     });
@@ -153,4 +152,5 @@ function downloadPDF() {
 
   doc.save("Parkinson_Screening_Report.pdf");
 }
+
 
